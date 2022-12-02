@@ -5,7 +5,7 @@ const create = user => {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(user),
     })
@@ -25,7 +25,7 @@ const read = (params, token) => {
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + token.t,
+            'Authorization': 'Bearer ' + token.t,
         }
     })
         .then(response => response.json())
@@ -33,12 +33,12 @@ const read = (params, token) => {
 };
 
 const update = (params, token, user) => {
-    return fetch(`${baseUrl}/aši/users/${params.userId}`, {
+    return fetch(`${baseUrl}/api/users/${params.userId}`, {
         method: 'PUT',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + token.t,
+            'Authorization': 'Bearer ' + token.t,
         },
         body: JSON.stringify(user),
     })
@@ -59,4 +59,4 @@ const remove = (params, token) => {
         .catch(err => console.log(err));
 }
 
-export { create, list, read, update, remove }; 
+export  { create, list, read, update, remove }; 

@@ -10,7 +10,8 @@ const create = (req, res, next) => {
         }
         res.status(200).json({ message: 'Successfully created a new user.'});
     });
-}
+} 
+
 
 const list = (req, res) => {
     User.find((err, users) => {

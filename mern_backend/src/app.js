@@ -27,6 +27,7 @@ app.use((err, req, res, next) => {
             error: `${err.name}: ${err.message}`
         });
     }
+    
 });
 
 export default app;

@@ -76,7 +76,7 @@ const EditProfile = ({ match }) => {
       password: values.password || undefined
     };
 
-    update({ userId: match.params.userId }, jwt.token, user).then(
+    update({ userId: match.params.userId }, { t: jwt.token}, user).then(
       (data) => {
         if (data && data.error) {
           setValues({ ...values, error: data.error });
@@ -87,7 +87,7 @@ const EditProfile = ({ match }) => {
     );
   };
 
-  const handleChange = (name) => (event) => {
+  const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value });
   };
 

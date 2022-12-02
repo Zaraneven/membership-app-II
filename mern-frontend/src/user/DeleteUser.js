@@ -25,7 +25,7 @@ const DeleteUser = (props) => {
   const handleRequestClose = () => setOpen(false);
 
   const deleteAccount = () => {
-    remove({ userId: props.userId }, jwt.token).then((data) => {
+    remove({ userId: props.userId }, {t: jwt.token}).then((data) => {
       if (data && data.error) {
         console.log(data.error);
       } else {

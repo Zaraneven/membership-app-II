@@ -1,6 +1,7 @@
 import config from "./config/config";
 import app from "./app";
 import mongoose from 'mongoose';
+import { startCase } from "lodash";
 
 mongoose.Promise = global.Promise;
 mongoose.connect(config.mongo)
